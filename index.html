@@ -3,51 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Pri 💖</title>
+<title>For Pri 💗</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background"></div>
-<div class="particles"></div>
-<div class="bouquet-left"></div>
-<div class="bouquet-right"></div>
+<!-- Floating Navigation -->
+<div class="nav-dots">
+  <a href="#hero"></a>
+  <a href="#story"></a>
+  <a href="#gallery"></a>
+  <a href="#memories"></a>
+  <a href="#letter"></a>
+  <a href="#forever"></a>
+</div>
+
+<div class="bouquet bouquet-left"></div>
+<div class="bouquet bouquet-right"></div>
 <div class="petals"></div>
 
-<section class="hero reveal">
-    <h1>You Are My Universe 🌌</h1>
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section id="hero" class="hero reveal">
+    <h1>You Are My Safe Place 🌸</h1>
     <p>
-        In every timeline, in every world,
-        I would still search for you.
-        And I would still fall for you.
+        In a world full of chaos,
+        you are my calm.
+        In a world full of noise,
+        you are my softness.
     </p>
 </section>
 
-<section class="gallery reveal">
+<section id="story" class="story reveal">
+    <h2>How It Began 💞</h2>
+    <p>
+        It started with small moments —
+        small smiles,
+        small talks,
+        small sparks.
+    </p>
+    <p>
+        And suddenly,
+        those small things became everything.
+    </p>
+</section>
+
+<section id="gallery" class="gallery reveal">
     <div class="photo"><img src="pri1.jpg"></div>
     <div class="photo"><img src="pri2.jpg"></div>
     <div class="photo"><img src="pri3.jpg"></div>
     <div class="photo"><img src="pri4.jpg"></div>
 </section>
 
-<section class="love-text reveal">
-    <h2>My Safe Place 💗</h2>
+<section id="memories" class="timeline reveal">
+    <h2>Our Timeline 🌷</h2>
+    <div class="timeline-item">
+        <h3>The First Smile</h3>
+        <p>The moment I knew something special had begun.</p>
+    </div>
+    <div class="timeline-item">
+        <h3>The First Laugh</h3>
+        <p>Your laugh became my favorite sound.</p>
+    </div>
+    <div class="timeline-item">
+        <h3>The First Deep Talk</h3>
+        <p>When comfort turned into connection.</p>
+    </div>
+</section>
+
+<section id="letter" class="letter reveal">
+    <h2>A Letter For You 💌</h2>
+    <button id="openLetter">Open My Heart</button>
+    <div class="hidden-letter" id="letterBox">
+        <p>
+            Loving you feels like peace.
+            Not loud.
+            Not dramatic.
+            Just warm and steady.
+        </p>
+        <p>
+            I promise patience.
+            I promise effort.
+            I promise choosing you —
+            again and again.
+        </p>
+    </div>
+</section>
+
+<section id="forever" class="forever reveal">
+    <h2>Forever & Always 💗</h2>
     <p>
-        You are the calm in my chaos,
-        the softness in my storms,
-        the poetry I never knew
-        I was capable of writing.
-    </p>
-    <p>
-        If love had a form,
-        it would look exactly like you.
+        No matter where life takes us,
+        I want my story written beside yours.
     </p>
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
+
