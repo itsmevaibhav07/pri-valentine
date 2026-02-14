@@ -2,80 +2,33 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
 font-family:'Poppins',sans-serif;
-color:white;
+background:linear-gradient(135deg,#fdf2f8,#fde2e4,#fae1dd);
+color:#5a4a4a;
 overflow-x:hidden;
-background:#0f0c29;
-position:relative;
-z-index:1;
 }
 
-/* Animated Background */
-.background{
-position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#1c1c3c);
-background-size:400% 400%;
-animation:gradientMove 15s ease infinite;
-z-index:-3;
+/* Sections */
+section{
+padding:100px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
 }
 
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+h1,h2{
+font-family:'Playfair Display',serif;
+color:#c76f89;
+margin-bottom:20px;
 }
 
-/* Particles */
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-background:radial-gradient(circle,rgba(255,255,255,0.2) 1px,transparent 1px);
-background-size:60px 60px;
-opacity:0.05;
-animation:moveParticles 20s linear infinite;
-z-index:-2;
-}
-
-@keyframes moveParticles{
-from{background-position:0 0;}
-to{background-position:1000px 1000px;}
-}
-
-/* Bouquets */
-.bouquet-left,
-.bouquet-right{
-position:fixed;
-top:50%;
-width:320px;
-height:650px;
-background:url('bouquet.png') no-repeat center;
-background-size:contain;
-transform-style:preserve-3d;
-animation:floatBouquet 6s ease-in-out infinite;
-z-index:0;
-opacity:0.9;
-pointer-events:none;
-}
-
-.bouquet-left{
-left:-60px;
-transform:translateY(-50%) rotateY(20deg);
-}
-
-.bouquet-right{
-right:-60px;
-transform:translateY(-50%) rotateY(-20deg) scaleX(-1);
-}
-
-@keyframes floatBouquet{
-0%,100%{transform:translateY(-50%) translateY(0);}
-50%{transform:translateY(-50%) translateY(25px);}
+p{
+line-height:1.8;
+margin-bottom:15px;
 }
 
 /* Hero */
@@ -84,80 +37,121 @@ height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:4rem;
-letter-spacing:3px;
-text-shadow:0 0 30px rgba(255,182,193,0.8);
-}
-
-.hero p{
-margin-top:20px;
-font-size:1.3rem;
-max-width:600px;
-opacity:0.9;
 }
 
 /* Gallery */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:50px;
-padding:100px 80px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .photo{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-padding:15px;
-border-radius:20px;
-transform:scale(0.8);
-opacity:0;
-transition:1s ease;
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+background:white;
+padding:12px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(199,111,137,0.2);
+transition:0.4s;
 }
 
 .photo img{
 width:100%;
-border-radius:15px;
-transition:0.6s;
+border-radius:20px;
 }
 
-.photo:hover img{
-transform:scale(1.05);
+.photo:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(199,111,137,0.4);
 }
 
-/* Love Text */
-.love-text{
-padding:120px 40px;
-text-align:center;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
+/* Timeline */
+.timeline-item{
+background:white;
+padding:25px;
+border-radius:20px;
+margin:20px 0;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.love-text h2{
-font-size:2.5rem;
-margin-bottom:20px;
-color:#ffb6c1;
+/* Letter */
+button{
+background:#c76f89;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
 }
 
-.love-text p{
-max-width:650px;
-margin:15px auto;
-line-height:1.8;
-opacity:0.9;
+button:hover{
+background:#a55a72;
 }
 
-/* Reveal Animation */
+.hidden-letter{
+display:none;
+margin-top:30px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Navigation Dots */
+.nav-dots{
+position:fixed;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.nav-dots a{
+width:12px;
+height:12px;
+background:#c76f89;
+border-radius:50%;
+display:block;
+opacity:0.6;
+transition:0.3s;
+}
+
+.nav-dots a:hover{
+opacity:1;
+transform:scale(1.3);
+}
+
+/* Bouquets */
+.bouquet{
+position:fixed;
+top:50%;
+width:230px;
+height:480px;
+background:url('bouquet.png') no-repeat center;
+background-size:contain;
+transform:translateY(-50%);
+opacity:0.3;
+pointer-events:none;
+}
+
+.bouquet-left{ left:-40px; }
+.bouquet-right{ right:-40px; transform:translateY(-50%) scaleX(-1); }
+
+/* Petals */
+.petals{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+/* Reveal */
 .reveal{
 opacity:0;
-transform:translateY(50px);
-transition:1.5s ease;
+transform:translateY(40px);
+transition:1.2s ease;
 }
 
 .reveal.active{
@@ -165,11 +159,11 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* Falling Petals */
-.petals{
-position:fixed;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:0;
+/* Mobile */
+@media(max-width:768px){
+.hero{height:auto;padding-top:120px;}
+.bouquet{display:none;}
+.nav-dots{display:none;}
+section{padding:70px 20px;}
 }
+
